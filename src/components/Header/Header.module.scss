@@ -1,0 +1,71 @@
+header {
+  position: absolute;
+  width: 1240px;
+  height: 68px;
+  top: 40px;
+  left: 100px;
+
+  img {
+    cursor: pointer;
+
+    position: relative;
+    left: 0%;
+    right: 83.04%;
+    top: 0%;
+    bottom: 0%;
+  }
+}
+
+.linkAccueuil {
+  cursor: pointer;
+  width: 136px;
+  height: 34px;
+  top: 17px;
+  left: 931px;
+  position: absolute;
+  left: 75.08%;
+  right: 13.95%;
+  top: 25%;
+  bottom: 25%;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 34px;
+
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
+  text-decoration-line: underline;
+
+  color: #ff6060;
+}
+
+.linkPropos {
+  cursor: pointer;
+
+  width: 116px;
+  height: 34px;
+  top: 17px;
+  left: 1124px;
+
+  position: absolute;
+  left: 90.65%;
+  right: 0%;
+  top: 25%;
+  bottom: 25%;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 142.6%;
+  /* or 34px */
+
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
+
+  color: #ff6060;
+}

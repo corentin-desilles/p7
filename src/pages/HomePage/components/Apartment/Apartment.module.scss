@@ -1,0 +1,35 @@
+.apartmentsLayout {
+  position: absolute;
+  width: 1240px;
+  height: 829px;
+  left: 100px;
+  top: 437px;
+  background-color: #f7f7f7;
+  border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.apartementCard {
+  height: 340px;
+  width: 340px;
+  left: 0px;
+  top: 0px;
+  border-radius: 10px;
+  background: #ff6060;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.cardTitle {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 142.6%;
+  color: #ffffff;
+  padding-left: 20px;
+}
