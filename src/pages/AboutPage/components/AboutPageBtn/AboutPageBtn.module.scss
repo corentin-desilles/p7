@@ -1,0 +1,44 @@
+.btnContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.aboutButton {
+  background-color: #ff6060;
+  width: 1023px;
+  padding: 0px 20px;
+  height: 47px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-family: 'Montserrat';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+.toggleArrow {
+  transform: rotate(-180deg);
+}
+
+.textLayout {
+  width: 983px;
+  color: #ff6060;
+  font-family: 'Montserrat';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+}
