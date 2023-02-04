@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/LOGO.png';
 import style from './Header.module.scss';
 
@@ -7,8 +8,13 @@ function Header() {
       <img src={logo} alt="logo Kasa" />
       <nav>
         <ul>
-          <li className={`${style.linkAccueuil}`}>Accueil</li>
-          <li className={`${style.linkPropos}`}>A Propos</li>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <li className={`${style.linkAccueuil}`}>Accueil</li>
+          </Link>
+
+          <Link to="/about" style={{ textDecoration: 'none' }}>
+            <li className={`${style.linkPropos}`}>A Propos</li>
+          </Link>
         </ul>
       </nav>
     </header>
