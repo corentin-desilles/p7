@@ -1,22 +1,9 @@
 .homepageLayout {
-  position: relative;
   width: 1440px;
-  height: 1024px;
-  background: #ffffff;
+  background-color: #e5e5e5;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.bodyLayout {
-  position: absolute;
-  width: 1240px;
-  height: 1095px;
-  top: 171px;
-  left: 100px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }

@@ -3,7 +3,7 @@ import style from './Header.module.scss';
 
 function Header() {
   return (
-    <header className={`${style.header} `}>
+    <header>
       <img src={logo} alt="logo Kasa" />
       <nav>
         <ul>

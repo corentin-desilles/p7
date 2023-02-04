@@ -1,36 +1,31 @@
 .bannerLayout {
   width: 1240px;
   height: 223px;
-  left: 100px;
-  top: 171px;
-  position: absolute;
+  margin-bottom: 40px;
 }
 
 .bannerText {
+  z-index: 1;
   height: 68px;
   width: 705px;
-  left: 373px;
-  top: 249px;
-
   position: absolute;
-  left: 25.9%;
-  right: 25.14%;
-  top: 24.32%;
-  bottom: 69.04%;
-
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 48px;
   line-height: 142.6%;
+  left: 0;
+  right: 0;
+  top: 180px;
+  margin-left: auto;
+  margin-right: auto;
   /* or 68px */
 
-  display: flex;
-  align-items: flex-end;
   color: #ffffff;
 }
 
 .bannerImageLayout {
   border-radius: 20px;
   background: #000000;
+  filter: brightness(70%);
 }
