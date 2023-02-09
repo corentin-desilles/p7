@@ -1,10 +1,13 @@
-import style from "./Banner.module.scss";
-import BannerText from "./components/BannerText";
+import style from './Banner.module.scss';
 
-function Banner({ banner, displayText }) {
+function Banner({ banner, displayBannerText }) {
   return (
     <section className={`${style.bannerLayout}`}>
-      {displayText && <BannerText />}
+      {displayBannerText ? (
+        <p className={`${style.bannerText}`}>Chez vous, partout et ailleurs</p>
+      ) : (
+        ''
+      )}
       <img
         src={banner}
         className={`${style.bannerImageLayout}`}

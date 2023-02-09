@@ -1,23 +1,22 @@
-import Banner from "../../components/Banner/Banner";
-import ApartmentCard from "./components/ApartmentCard/ApartmentCard";
-import style from "./HomePage.module.scss";
-import { useContext, useState } from "react";
-import Loading from "../../components/Loading/Loading";
-import { ApiContext } from "../../context/ApiContext";
-import { useFetchData } from "../../hooks";
-import bannerImage from "../../assets/images/banniereAccueil.png";
-import Footer from "../../components/Footer/Footer";
+import Banner from '../../components/Banner/Banner';
+import ApartmentCard from './components/ApartmentCard/ApartmentCard';
+import style from './HomePage.module.scss';
+import { useContext, useState } from 'react';
+import Loading from '../../components/Loading/Loading';
+import { ApiContext } from '../../context/ApiContext';
+import { useFetchData } from '../../hooks';
+import bannerImage from '../../assets/images/banniereAccueil.png';
+import Footer from '../../components/Footer/Footer';
 
 function HomePage() {
   const [page, setPage] = useState(1);
   const BASE_URL_API = useContext(ApiContext);
   const [logements, isLoading] = useFetchData(BASE_URL_API, page);
-  const displayBannerText = true;
 
   return (
     <>
       <div className={` ${style.animate} ${style.animateTime1}`}>
-        <Banner banner={bannerImage} displayText={displayBannerText} />
+        <Banner banner={bannerImage} displayBannerText={true} />
       </div>
 
       <section
@@ -30,7 +29,7 @@ function HomePage() {
         ) : (
           <>
             <div className={` ${style.grid}  `}>
-              {logements.map((l) => (
+              {logements.map(l => (
                 <div className={`${style.animate} ${style.animateTime3}`}>
                   <ApartmentCard key={l._id} logement={l} />
                 </div>

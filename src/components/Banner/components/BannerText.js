@@ -1,9 +1,9 @@
-import style from "./BannerText.module.scss";
+// import style from "./BannerText.module.scss";
 
-function BannerText() {
-  return (
-    <p className={`${style.bannerText}`}>Chez vous, partout et ailleurs</p>
-  );
-}
+// function BannerText() {
+//   return (
 
-export default BannerText;
+//   );
+// }
+
+// export default BannerText;

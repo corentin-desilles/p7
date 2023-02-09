@@ -10,3 +10,23 @@
   filter: brightness(70%);
   height: 100%;
 }
+
+.bannerText {
+  z-index: 1;
+  height: 68px;
+  width: 705px;
+  position: absolute;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 142.6%;
+  left: 0;
+  right: 0;
+  top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  /* or 68px */
+
+  color: #ffff;
+}
