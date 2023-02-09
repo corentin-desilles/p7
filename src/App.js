@@ -1,14 +1,19 @@
 import Header from './components/Header/Header';
-import style from './pages/HomePage/HomePage.module.scss';
-import Footer from './components/Footer/Footer';
+import style from './App.module.scss';
 import { Outlet } from 'react-router';
+import { Suspense } from 'react';
+
+// import { seedLogements } from './data/seed';
+
+// seedLogements();
 
 function App() {
   return (
-    <div className={`${style.homepageLayout}`}>
+    <div className={`${style.layout}`}>
       <Header />
-      <Outlet />
-      <Footer />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }
