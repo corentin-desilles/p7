@@ -1,14 +1,7 @@
-import style from "./NameTag.module.scss";
+import style from './NameTag.module.scss';
 
-function NameTag({ targetedLogement: { tags } }) {
-  return (
-    <div className={`${style.container}`}>
-      {tags.map((t) => (
-        <div key={t} className={`${style.tagStyle}`}>
-          {t}
-        </div>
-      ))}
-    </div>
-  );
+function NameTag({ tag }) {
+  return <div className={`${style.tagStyle}`}>{tag}</div>;
 }
+
 export default NameTag;
