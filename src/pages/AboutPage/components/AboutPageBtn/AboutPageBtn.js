@@ -1,29 +1,31 @@
-import { useState } from 'react';
-import style from './AboutPageBtn.module.scss';
+import style from "./AboutPageBtn.module.scss";
 
-function AboutPageBtn({ about }) {
-  const [displayText, setDisplayText] = useState(false);
-
-  function handleClickDisplayText() {
-    setDisplayText(!displayText);
-  }
-
+function AboutPageBtn({ about, i, toggle, selected }) {
   return (
-    <div className={`${style.btnContainer}`}>
-      <button
-        onClick={handleClickDisplayText}
-        className={`${style.aboutButton}`}
-      >
-        <p>{about.title}</p>
+    <div className={`${style.item}`}>
+      <div className={`${style.title}`} onClick={() => toggle(i)}>
+        <h2>{about.title}</h2>
         <span>
-          <i
-            className={`fa-solid fa-angle-down fa-2xl ${
-              displayText ? style.toggleArrow : ''
-            }`}
-          ></i>
+          {selected === i ? (
+            <i className={`fa-solid fa-angle-down fa-2xl `}></i>
+          ) : (
+            <i
+              className={`fa-solid fa-angle-down fa-2xl ${style.toggleArrow} `}
+            ></i>
+          )}
         </span>
-      </button>
-      {displayText ? <p className={`${style.textLayout}`}>{about.text}</p> : ''}
+      </div>
+      <div className={`${style.contentContainer}`}>
+        <div
+          className={
+            selected === i
+              ? `${style.content} ${style.show}`
+              : `${style.content}`
+          }
+        >
+          {about.text}
+        </div>
+      </div>
     </div>
   );
 }

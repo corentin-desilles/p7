@@ -4,12 +4,13 @@
   left: 0px;
   top: 0px;
   border-radius: 10px;
-  background: #ff6060;
+  background: var(--primary);
 
   display: flex;
   flex-direction: column;
   cursor: pointer;
   transition: color 0.2s;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   &:hover {
     img {
@@ -17,7 +18,7 @@
     }
   }
   .cardTitle {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -34,22 +35,7 @@
     border-radius: 10px 10px 0px 0px;
     img {
       height: 340px;
-      width: 340px;
       transition: 1s transform;
-    }
-  }
-
-  .recipe {
-    > i {
-      position: absolute;
-      transition: color 0.2s;
-      z-index: 1;
-      &:hover {
-        color: var(--red-1);
-      }
-    }
-    .recipeTitle {
-      color: var(--primary);
     }
   }
 }

@@ -1,14 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './assets/styles/index.scss';
-import reportWebVitals from './reportWebVitals';
-import { RouterProvider } from 'react-router';
-import { router } from './router';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./assets/styles/index.scss";
+import reportWebVitals from "./reportWebVitals";
+import { RouterProvider } from "react-router";
+import { router } from "./router";
+import { ApiContext } from "./context/ApiContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <ApiContext.Provider value="https://restapi.fr/api/logements">
+      <RouterProvider router={router}></RouterProvider>
+    </ApiContext.Provider>
   </React.StrictMode>
 );
 

@@ -1,9 +1,49 @@
-.homepageLayout {
-  width: 1440px;
-  background-color: #e5e5e5;
-  margin: auto;
+@keyframes slideup {
+  from {
+    transform: translatey(20px);
+    opacity: 0%;
+  }
+  to {
+    transform: translatey(0px);
+    opacity: 100%;
+  }
+}
+
+.apartmentsLayout {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 1240px;
+  border-radius: 25px;
+  padding-top: 50px;
+  background: #e5e5e5;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-around;
+  // align-items: center;
+}
+
+.grid {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(3, 350px);
+  grid-auto-columns: repeat(3, 350px);
+  gap: 50px;
+}
+
+.animate {
+  animation: slideup 1s forwards;
+  opacity: 0;
+}
+
+.animateTime1 {
+  animation-delay: calc(0.1s / 1);
+}
+
+.animateTime2 {
+  animation-delay: calc(0.3s / 1);
+}
+
+.animateTime3 {
+  animation-delay: calc(0.1s / 1);
 }

@@ -1,0 +1,28 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nameContainer {
+  color: var(--primary);
+  width: 93px;
+  font-size: 18px;
+  text-align: end;
+  margin-right: 10px;
+}
+
+.pictureContainer {
+  background-color: #c4c4c4;
+  width: 64px;
+  height: 64px;
+  border-radius: 40px;
+  object-fit: contain;
+}
+
+.imgStyle {
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+}
