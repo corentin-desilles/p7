@@ -1,5 +1,5 @@
-import style from "./ApartmentCard.module.scss";
-import { Link } from "react-router-dom";
+import style from './ApartmentCard.module.scss';
+import { Link } from 'react-router-dom';
 
 function AppartmentCard({ logement: { _id, title, cover } }) {
   return (
