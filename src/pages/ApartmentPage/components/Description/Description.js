@@ -1,6 +1,4 @@
-import style from './Description.module.scss';
-
-import { useState } from 'react';
+import Accordion from '../../../../components/Accordion/Accordion';
 
 // function Description({ targetedLogement: { description, equipments } }) {
 //   const [displayDescription, setDisplayDescription] = useState(true);
@@ -64,75 +62,15 @@ import { useState } from 'react';
 //   );
 // }
 
-function Description({ targetedLogement: { description, equipments } }) {
-  const [selectDescription, setSelectDescription] = useState(true);
-  const [selectEquipments, setSelectEquipments] = useState(true);
-
-  function handleClickDisplayDescription() {
-    setSelectDescription(!selectDescription);
-  }
-
-  function handleClickDisplayEquipment() {
-    setSelectEquipments(!selectEquipments);
-  }
-
+function Description({ text, title, i, toggle, selected }) {
   return (
-    <div className={`${style.wrapper}`}>
-      <div className={`${style.accordion}`}>
-        <div className={`${style.item}`}>
-          <div
-            onClick={handleClickDisplayDescription}
-            className={`${style.title}`}
-          >
-            <h2>Description</h2>
-            <span>
-              {selectDescription === true ? (
-                <i className={`fa-solid fa-angle-down fa-2xl `}></i>
-              ) : (
-                <i
-                  className={`fa-solid fa-angle-down fa-2xl ${style.toggleArrow} `}
-                ></i>
-              )}
-            </span>
-          </div>
-          <div
-            className={
-              selectDescription === true
-                ? `${style.content} ${style.show}`
-                : `${style.content}`
-            }
-          >
-            {description}
-          </div>
-        </div>
-        <div className={`${style.item}`}>
-          <div
-            onClick={handleClickDisplayEquipment}
-            className={`${style.title}`}
-          >
-            <h2>Equipments</h2>
-            <span>
-              {selectEquipments === true ? (
-                <i className={`fa-solid fa-angle-down fa-2xl `}></i>
-              ) : (
-                <i
-                  className={`fa-solid fa-angle-down fa-2xl ${style.toggleArrow} `}
-                ></i>
-              )}
-            </span>
-          </div>
-          <div
-            className={
-              selectEquipments === true
-                ? `${style.content} ${style.show}`
-                : `${style.content}`
-            }
-          >
-            {equipments}
-          </div>
-        </div>
-      </div>
-    </div>
+    <Accordion
+      text={text}
+      title={title}
+      i={i}
+      toggle={toggle}
+      selected={selected}
+    />
   );
 }
 

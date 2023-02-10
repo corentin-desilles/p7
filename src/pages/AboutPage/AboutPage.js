@@ -1,15 +1,15 @@
-import Banner from "../../components/Banner/Banner.js";
-import AboutPageBtn from "./components/AboutPageBtn/AboutPageBtn";
-import { about } from "../../data/about.js";
-import bannerAbout from "../../assets/images/bannerAbout.png";
-import Footer from "../../components/Footer/Footer";
-import style from "./AboutPage.module.scss";
-import { useState } from "react";
+import Banner from '../../components/Banner/Banner.js';
+import AboutPageBtn from './components/AboutPageBtn/AboutPageBtn';
+import { about } from '../../data/about.js';
+import bannerAbout from '../../assets/images/bannerAbout.png';
+import Footer from '../../components/Footer/Footer';
+import style from './AboutPage.module.scss';
+import { useState } from 'react';
 
 function AboutPage() {
   const [selected, setSelected] = useState(null);
 
-  const toggle = (i) => {
+  const toggle = i => {
     //ferme les autres elem si j'en ouvre un autre
     if (selected === i) {
       return setSelected(null);
@@ -29,7 +29,8 @@ function AboutPage() {
             {about.map((about, i) => (
               <AboutPageBtn
                 key={about.title}
-                about={about}
+                text={about.text}
+                title={about.title}
                 i={i}
                 toggle={toggle}
                 selected={selected}

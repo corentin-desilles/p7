@@ -7,14 +7,32 @@ import Host from './components/Host/Host';
 import { ApiContext } from '../../context/ApiContext';
 import { useFetchData } from '../../hooks';
 import { useParams } from 'react-router';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import style from './ApartmentPage.module.scss';
 import Description from './components/Description/Description';
+import Equipements from './components/Equipements/Equipements';
 
 function ApartmentPage() {
   const BASE_URL_API = useContext(ApiContext);
   const [logements] = useFetchData(BASE_URL_API);
   const { apartId } = useParams();
+
+  const [selected, setSelected] = useState(null);
+
+  const toggleD = i => {
+    //ferme les autres elem si j'en ouvre un autre
+    if (selected === i) {
+      return setSelected(null);
+    }
+    setSelected(i);
+  };
+  const toggleE = i => {
+    //ferme les autres elem si j'en ouvre un autre
+    if (selected === i) {
+      return setSelected(null);
+    }
+    setSelected(i);
+  };
 
   return (
     <>
@@ -50,7 +68,25 @@ function ApartmentPage() {
               <div
                 className={`${style.descriptionContainer} ${style.animate3}`}
               >
-                <Description targetedLogement={targetedLogement} />
+                <div className={`${style.accordion}`}>
+                  <Description
+                    key={targetedLogement.description}
+                    text={targetedLogement.description}
+                    title={'Description'}
+                    toggle={toggleD}
+                    selected={selected}
+                  />
+                </div>
+
+                <div className={`${style.accordion}`}>
+                  <Equipements
+                    key={Math.random()}
+                    text={targetedLogement.equipments}
+                    title={'Equipements'}
+                    toggle={toggleE}
+                    selected={selected}
+                  />
+                </div>
               </div>
             </div>
           )

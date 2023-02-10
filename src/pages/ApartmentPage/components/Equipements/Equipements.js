@@ -1,6 +1,6 @@
 import Accordion from '../../../../components/Accordion/Accordion';
 
-function AboutPageBtn({ text, title, i, toggle, selected }) {
+function Equipements({ text, title, i, toggle, selected }) {
   return (
     <Accordion
       text={text}
@@ -12,4 +12,4 @@ function AboutPageBtn({ text, title, i, toggle, selected }) {
   );
 }
 
-export default AboutPageBtn;
+export default Equipements;
