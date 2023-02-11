@@ -4,7 +4,7 @@ import style from './Header.module.scss';
 
 function Header() {
   return (
-    <header className="">
+    <header>
       <Link to="/">
         <img src={logo} alt="logo Kasa" />
       </Link>

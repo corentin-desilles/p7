@@ -2,7 +2,7 @@ import style from './Banner.module.scss';
 
 function Banner({ banner, displayBannerText }) {
   return (
-    <section className={`${style.bannerLayout} `}>
+    <section className={`${style.bannerLayout}`}>
       {displayBannerText ? (
         <p className={`${style.bannerText}`}>Chez vous, partout et ailleurs</p>
       ) : (

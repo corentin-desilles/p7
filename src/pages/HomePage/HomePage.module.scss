@@ -20,7 +20,7 @@
   width: 100%;
   border-radius: 25px;
   padding-top: 50px;
-  background: #e5e5e5;
+  background: #f7f7f7;
   @include mixin.xs {
     background: none;
     padding-top: 0px;
@@ -73,5 +73,27 @@
 .buttonStyle {
   @include mixin.xs {
     padding: 3px 7px;
+  }
+}
+
+.bannerContainer {
+  width: 1240px;
+  height: 223px;
+  margin-bottom: 30px;
+  @include mixin.xs {
+    width: 335px;
+    height: 111px;
+  }
+  @include mixin.sm {
+    width: 537px;
+    height: 179px;
+  }
+  @include mixin.md {
+    width: 729px;
+    height: 223px;
+  }
+  @include mixin.lg {
+    width: 953px;
+    height: 223px;
   }
 }

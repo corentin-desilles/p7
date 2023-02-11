@@ -15,7 +15,9 @@ function HomePage() {
 
   return (
     <>
-      <div className={` ${style.animate} ${style.animateTime1}`}>
+      <div
+        className={` ${style.bannerContainer} ${style.animate} ${style.animateTime1}`}
+      >
         <Banner banner={bannerImage} displayBannerText={true} />
       </div>
 

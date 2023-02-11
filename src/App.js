@@ -11,8 +11,8 @@ import Footer from './components/Footer/Footer';
 function App() {
   return (
     <>
-      <Header />
       <div className={`${style.layout}`}>
+        <Header />
         <Suspense>
           <Outlet />
         </Suspense>
