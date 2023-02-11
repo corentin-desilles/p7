@@ -1,15 +1,15 @@
-import { lazy } from "react";
-import { createBrowserRouter } from "react-router-dom";
-import App from "./App";
+import { lazy } from 'react';
+import { createBrowserRouter } from 'react-router-dom';
+import App from './App';
 
-import Error from "./pages/ErrorPage/Error";
-const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
-const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"));
-const ApartmentPage = lazy(() => import("./pages/ApartmentPage/ApartmentPage"));
+import Error from './pages/ErrorPage/Error';
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const AboutPage = lazy(() => import('./pages/AboutPage/AboutPage'));
+const ApartmentPage = lazy(() => import('./pages/ApartmentPage/ApartmentPage'));
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     children: [
       {
@@ -17,15 +17,15 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/about",
+        path: '/about',
         element: <AboutPage />,
       },
       {
-        path: "/apart/:apartId",
+        path: '/apart/:apartId',
         element: <ApartmentPage />,
       },
       {
-        path: "*",
+        path: '*',
         element: <Error />,
       },
     ],

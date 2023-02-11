@@ -1,60 +1,50 @@
+@use '../../assets/styles/mixins' as mixin;
+
 header {
-  width: 1240px;
+  margin: auto;
+  max-width: 1240px;
+  width: 100%;
   height: 68px;
-  top: 40px;
-  left: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 40px 20px;
-
+  padding: 40px 0px 63px 0px;
   ul {
     display: flex;
   }
-
   img {
     cursor: pointer;
   }
+  @include mixin.xs {
+    width: 335px;
+    height: 47px;
+    padding: 15px 0px 20px 0px;
+    img {
+      height: 47px;
+      width: 145px;
+    }
+  }
 }
 
-.linkAccueuil {
+.link {
   cursor: pointer;
   width: 136px;
   height: 34px;
-
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 34px;
-
   display: flex;
   align-items: flex-end;
   text-align: right;
-  color: #ff6060;
+  color: var(--primary);
   &:hover {
     text-decoration-line: underline;
   }
-}
-
-.linkPropos {
-  cursor: pointer;
-
-  width: 116px;
-  height: 34px;
-
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 142.6%;
-  /* or 34px */
-
-  display: flex;
-  align-items: flex-end;
-  text-align: right;
-
-  color: #ff6060;
-  &:hover {
-    text-decoration-line: underline;
+  @include mixin.xs {
+    font-size: 12px;
+    width: 71px;
+    height: 17px;
+    line-height: 17px;
   }
 }

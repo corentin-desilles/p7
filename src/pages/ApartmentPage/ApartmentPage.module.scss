@@ -1,3 +1,5 @@
+@use '../../assets/styles/mixins' as mixin;
+
 @keyframes slideup {
   from {
     transform: translatey(20px);
@@ -9,12 +11,52 @@
   }
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .carousselContainer {
   height: 415px;
   width: 1240px;
   border-radius: 25px;
   animation: slideup 1s forwards;
   opacity: 0;
+  @include mixin.xs {
+    width: 335px;
+    height: 255px;
+  }
+}
+
+.bodyContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0px 0px 30px 0px;
+  @include mixin.xs {
+    max-width: 335px;
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.hostAndRateContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include mixin.xs {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+.rateContainer {
+  height: 40px;
+}
+
+.hostContainer {
+  width: 196px;
+  height: 70px;
 }
 
 .titleContainer {
@@ -23,23 +65,9 @@
   top: 573px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
 .nameTagContainer {
   height: 30px;
   display: flex;
-}
-
-.rateContainer {
-  height: 40px;
-}
-
-.hostContainer {
-  width: 196px;
-  height: 70px;
 }
 
 .layoutContainer {
@@ -66,16 +94,25 @@
   margin-bottom: 20px;
 }
 
-.accordion {
-  width: 582px;
-  display: flex;
-  justify-content: space-between;
-}
-
 .descriptionContainer {
   width: 1240px;
   display: flex;
   justify-content: space-between;
   animation: slideup 1s forwards;
   opacity: 0;
+  @include mixin.xs {
+    max-width: 335px;
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.accordion {
+  width: 582px;
+  display: flex;
+  justify-content: space-between;
+  @include mixin.xs {
+    max-width: 335px;
+    width: 100%;
+  }
 }

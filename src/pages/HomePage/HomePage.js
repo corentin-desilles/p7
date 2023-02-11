@@ -6,7 +6,7 @@ import Loading from '../../components/Loading/Loading';
 import { ApiContext } from '../../context/ApiContext';
 import { useFetchData } from '../../hooks';
 import bannerImage from '../../assets/images/banniereAccueil.png';
-import Footer from '../../components/Footer/Footer';
+// import Footer from '../../components/Footer/Footer';
 
 function HomePage() {
   const [page, setPage] = useState(1);
@@ -28,7 +28,7 @@ function HomePage() {
           </div>
         ) : (
           <>
-            <div className={` ${style.grid}  `}>
+            <div className={` ${style.grid}`}>
               {logements.map(l => (
                 <div className={`${style.animate} ${style.animateTime3}`}>
                   <ApartmentCard key={l._id} logement={l} />
@@ -40,16 +40,16 @@ function HomePage() {
             >
               <button
                 onClick={() => setPage(page + 1)}
-                className="btn btn-reverse-primary m-50"
+                className={`btn btn-reverse-primary m-50 ${style.buttonStyle} `}
               >
                 Charger plus de logements
               </button>
             </div>
           </>
         )}
-        <div className={` ${style.footerContainer}`}>
+        {/* <div className={` ${style.footerContainer}`}>
           <Footer />
-        </div>
+        </div> */}
       </section>
     </>
   );

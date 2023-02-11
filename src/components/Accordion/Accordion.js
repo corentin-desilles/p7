@@ -3,7 +3,7 @@ import style from './Accordion.module.scss';
 
 function Accordion({ text, title }) {
   const bienUnTableau = Array.isArray(text);
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(true);
 
   function handleClickDisplayText() {
     setSelected(!selected);
@@ -15,7 +15,7 @@ function Accordion({ text, title }) {
         <h2>{title}</h2>
         <span>
           {selected === true ? (
-            <i className={`fa-solid fa-angle-down fa-2xl `}></i>
+            <i className={`fa-solid fa-angle-down fa-2xl ${style.arrow}`}></i>
           ) : (
             <i
               className={`fa-solid fa-angle-down fa-2xl ${style.toggleArrow} `}

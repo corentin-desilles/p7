@@ -1,3 +1,5 @@
+@use '../../assets/styles/mixins' as mixin;
+
 @keyframes slidedown {
   from {
     transform: translatey(-20px);
@@ -9,13 +11,25 @@
   }
 }
 
+.arrow {
+  @include mixin.xs {
+    font-size: 20px;
+  }
+}
+
 .toggleArrow {
   transform: rotate(-180deg);
+  @include mixin.xs {
+    font-size: 20px;
+  }
 }
 
 .item {
-  margin-bottom: 5px;
+  margin-bottom: 30px;
   width: 100%;
+  @include mixin.xs {
+    margin-bottom: 20px;
+  }
 }
 
 .title {
@@ -28,6 +42,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
+  @include mixin.xs {
+    height: 30px;
+  }
+
   h2 {
     font-family: 'Montserrat';
     font-size: 24px;
@@ -35,26 +54,31 @@
     line-height: 34px;
     letter-spacing: 0em;
     text-align: left;
+    @include mixin.xs {
+      font-size: 13px;
+    }
   }
 }
 
 .content {
   max-height: 0px;
-
-  background-color: #f7f7f7;
+  background-color: #f6f6f6;
   overflow: hidden;
-
   transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  font-family: Montserrat;
+  font-family: 'Montserrat';
   font-size: 24px;
   font-weight: 400;
   line-height: 34px;
   letter-spacing: 0em;
   text-align: left;
-  padding: 0px 12px 0px 20px;
-
+  padding: 0px 0px 0px 20px;
   border-radius: 5px;
   color: var(--primary);
+  @include mixin.xs {
+    font-size: 12px;
+    line-height: 17.11px;
+    padding: 0px 6px 0px 10px;
+  }
 }
 
 .content.show {

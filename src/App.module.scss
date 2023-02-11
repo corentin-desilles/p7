@@ -1,6 +1,24 @@
+@use './assets/styles/mixins' as mixin;
+
 .layout {
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include mixin.lg-lt {
+    margin: 0px 20px 0px 20px;
+  }
+  @include mixin.xs {
+  }
+  margin: 0px 20px 0px 20px;
+}
+
+.footerContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
 }

@@ -1,8 +1,14 @@
+@use '../../../../assets/styles/mixins' as mixin;
+
 .container {
   height: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  @include mixin.xs {
+    height: 33px;
+    margin-top: 20px;
+  }
 }
 
 .nameContainer {
@@ -11,6 +17,10 @@
   font-size: 18px;
   text-align: end;
   margin-right: 10px;
+  @include mixin.xs {
+    font-size: 12px;
+    width: 50px;
+  }
 }
 
 .pictureContainer {
@@ -19,6 +29,10 @@
   height: 64px;
   border-radius: 40px;
   object-fit: contain;
+  @include mixin.xs {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .imgStyle {

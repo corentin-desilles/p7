@@ -1,6 +1,11 @@
+@use '../../../../assets/styles/mixins' as mixin;
+
 .container {
   height: 100%;
   position: relative;
+  @include mixin.xs {
+    margin-top: 20px;
+  }
 }
 
 .starBasic {
@@ -8,6 +13,11 @@
   width: 30px;
   color: var(--gray-1);
   padding: 5px;
+  @include mixin.xs {
+    font-size: 15px;
+    height: 15px;
+    width: 15px;
+  }
 }
 
 .starToggled {
@@ -15,4 +25,9 @@
   width: 30px;
   color: var(--primary);
   padding: 5px;
+  @include mixin.xs {
+    font-size: 15px;
+    height: 15px;
+    width: 15px;
+  }
 }

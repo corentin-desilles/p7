@@ -2,7 +2,7 @@ import Banner from '../../components/Banner/Banner.js';
 import AboutPageBtn from './components/AboutPageBtn/AboutPageBtn';
 import { about } from '../../data/about.js';
 import bannerAbout from '../../assets/images/bannerAbout.png';
-import Footer from '../../components/Footer/Footer';
+// import Footer from '../../components/Footer/Footer';
 import style from './AboutPage.module.scss';
 import { useState } from 'react';
 
@@ -40,7 +40,7 @@ function AboutPage() {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

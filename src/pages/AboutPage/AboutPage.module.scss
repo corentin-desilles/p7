@@ -1,3 +1,5 @@
+@use '../../assets/styles/mixins' as mixin;
+
 @keyframes slideup {
   from {
     transform: translatey(20px);
@@ -14,6 +16,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include mixin.xs {
+  }
 }
 
 .bannerContainer {
@@ -24,7 +28,6 @@
 }
 
 .wrapper {
-  border: solid red 1px;
   width: 84vw;
   height: 100%;
   display: flex;
@@ -33,9 +36,14 @@
   animation: slideup 1s forwards;
   opacity: 0;
   animation-delay: calc(0.3s / 1);
+  @include mixin.xs {
+    max-width: 335px;
+    width: 100%;
+  }
 }
 
 .accordion {
-  border: solid blue 1px;
   width: 1023px;
+  @include mixin.xs {
+  }
 }

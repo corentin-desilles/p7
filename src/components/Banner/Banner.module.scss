@@ -1,7 +1,13 @@
+@use '../../assets/styles/mixins' as mixin;
+
 .bannerLayout {
   width: 1240px;
   height: 223px;
   margin-bottom: 40px;
+  @include mixin.xs {
+    width: 335px;
+    height: 111px;
+  }
 }
 
 .bannerImageLayout {
@@ -9,6 +15,11 @@
   background: #000000;
   filter: brightness(70%);
   height: 100%;
+  @include mixin.xs {
+    width: 335px;
+    height: 111px;
+    border-radius: 10px;
+  }
 }
 
 .bannerText {
@@ -26,7 +37,13 @@
   top: 30px;
   margin-left: auto;
   margin-right: auto;
-  /* or 68px */
-
   color: #ffff;
+  @include mixin.xs {
+    width: 217px;
+    height: 48px;
+    font-size: 24px;
+    line-height: 24px;
+    top: 10px;
+    left: -90px;
+  }
 }
