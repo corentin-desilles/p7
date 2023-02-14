@@ -2,10 +2,10 @@ import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 
-import Error from './pages/ErrorPage/Error';
-const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+import HomePage from './pages/HomePage/HomePage';
 const AboutPage = lazy(() => import('./pages/AboutPage/AboutPage'));
 const ApartmentPage = lazy(() => import('./pages/ApartmentPage/ApartmentPage'));
+const Error = lazy(() => import('./pages/ErrorPage/Error'));
 
 export const router = createBrowserRouter([
   {
