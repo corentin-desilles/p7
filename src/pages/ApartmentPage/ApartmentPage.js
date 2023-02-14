@@ -3,20 +3,22 @@ import NameTag from './components/NameTag/NameTag';
 import Title from './components/Title/Title';
 import Rate from './components/Rate/Rate';
 import Host from './components/Host/Host';
-import Error from '../ErrorPage/Error';
+// import Error from '../ErrorPage/Error';
 // import Description from './components/Description/Description';
 import { ApiContext } from '../../context/ApiContext';
 import { useFetchData } from '../../hooks';
-import { useParams } from 'react-router';
+import { Navigate, useParams } from 'react-router';
 import { useContext, useState } from 'react';
 import style from './ApartmentPage.module.scss';
 import Description from './components/Description/Description';
 import Equipements from './components/Equipements/Equipements';
+import Loading from '../../components/Loading/Loading';
 
 function ApartmentPage() {
   const BASE_URL_API = useContext(ApiContext);
-  const [logements] = useFetchData(BASE_URL_API);
+  const [logements, isLoading] = useFetchData(BASE_URL_API);
   const { apartId } = useParams();
+  // const logementExiste = logements.find(lo => lo._id === apartId._id);
 
   const [selected, setSelected] = useState(null);
 
@@ -35,71 +37,66 @@ function ApartmentPage() {
     setSelected(i);
   };
 
-  // const [displayPage, setDisplayPage] = useState(false);
-
-  // function isApartIdOk() {
-  //   if (apartId === logements._id) {
-  //     setDisplayPage(true);
-  //   }
-  // }
-  const log = logements.filter(logement => logement._id === apartId);
+  let targetedLogement = logements.find(logement => logement._id === apartId);
 
   return (
     <>
-      {log.map(targetedLogement =>
-        targetedLogement._id === apartId ? (
-          <div key={targetedLogement._id} className={`${style.container}`}>
-            <div
-              className={`${style.carousselContainer} ${style.animate1} mb-30`}
-            >
-              <Pictures targetedLogement={targetedLogement} />
-            </div>
-            <div className={`${style.bodyContainer}`}>
-              <div className={`${style.titleAndTagContainer}`}>
-                <div className={`${style.titleContainer} mb-20`}>
-                  <Title targetedLogement={targetedLogement} />
-                </div>
-                <div className={`${style.nameTagContainer}`}>
-                  {targetedLogement.tags.map(tag => (
-                    <NameTag key={Math.random()} tag={tag} />
-                  ))}
-                </div>
+      {isLoading ? (
+        <div>
+          <Loading />
+        </div>
+      ) : targetedLogement ? (
+        <div key={targetedLogement._id} className={`${style.container}`}>
+          <div
+            className={`${style.carousselContainer} ${style.animate1} mb-30`}
+          >
+            <Pictures targetedLogement={targetedLogement} />
+          </div>
+          <div className={`${style.bodyContainer}`}>
+            <div className={`${style.titleAndTagContainer}`}>
+              <div className={`${style.titleContainer} mb-20`}>
+                <Title targetedLogement={targetedLogement} />
               </div>
-              <div className={`${style.hostAndRateContainer}`}>
-                <div className={`${style.hostContainer}`}>
-                  <Host targetedLogement={targetedLogement} />
-                </div>
-                <div className={`${style.rateContainer}`}>
-                  <Rate targetedLogement={targetedLogement} />
-                </div>
+              <div className={`${style.nameTagContainer}`}>
+                {targetedLogement.tags.map(tag => (
+                  <NameTag key={Math.random()} tag={tag} />
+                ))}
               </div>
             </div>
-
-            <div className={`${style.descriptionContainer} ${style.animate3}`}>
-              <div className={`${style.accordion}`}>
-                <Description
-                  key={targetedLogement.description}
-                  text={targetedLogement.description}
-                  title={'Description'}
-                  toggle={toggleD}
-                  selected={selected}
-                />
+            <div className={`${style.hostAndRateContainer}`}>
+              <div className={`${style.hostContainer}`}>
+                <Host targetedLogement={targetedLogement} />
               </div>
-
-              <div className={`${style.accordion}`}>
-                <Equipements
-                  key={Math.random()}
-                  text={targetedLogement.equipments}
-                  title={'Equipements'}
-                  toggle={toggleE}
-                  selected={selected}
-                />
+              <div className={`${style.rateContainer}`}>
+                <Rate targetedLogement={targetedLogement} />
               </div>
             </div>
           </div>
-        ) : (
-          <Error />
-        )
+
+          <div className={`${style.descriptionContainer} ${style.animate3}`}>
+            <div className={`${style.accordion}`}>
+              <Description
+                key={targetedLogement.description}
+                text={targetedLogement.description}
+                title={'Description'}
+                toggle={toggleD}
+                selected={selected}
+              />
+            </div>
+
+            <div className={`${style.accordion}`}>
+              <Equipements
+                key={Math.random()}
+                text={targetedLogement.equipments}
+                title={'Equipements'}
+                toggle={toggleE}
+                selected={selected}
+              />
+            </div>
+          </div>
+        </div>
+      ) : (
+        <Navigate replace to="/404" />
       )}
     </>
   );
