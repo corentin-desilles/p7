@@ -6,7 +6,6 @@ import Loading from '../../components/Loading/Loading';
 import { ApiContext } from '../../context/ApiContext';
 import { useFetchData } from '../../hooks';
 import bannerImage from '../../assets/images/banniereAccueil.png';
-// import Footer from '../../components/Footer/Footer';
 
 function HomePage() {
   const [page, setPage] = useState(1);
@@ -18,11 +17,7 @@ function HomePage() {
       <div
         className={` ${style.bannerContainer} ${style.animate} ${style.animateTime1}`}
       >
-        <Banner
-          banner={bannerImage}
-          displayBannerText={true}
-          key={Math.random()}
-        />
+        <Banner banner={bannerImage} displayBannerText={true} />
       </div>
 
       <section
@@ -38,9 +33,9 @@ function HomePage() {
               {logements.map(l => (
                 <div
                   className={`${style.animate} ${style.animateTime3}`}
-                  key={Math.random()}
+                  key={l._id}
                 >
-                  <ApartmentCard key={l._id} logement={l} />
+                  <ApartmentCard logement={l} />
                 </div>
               ))}
             </div>
@@ -56,9 +51,6 @@ function HomePage() {
             </div>
           </>
         )}
-        {/* <div className={` ${style.footerContainer}`}>
-          <Footer />
-        </div> */}
       </section>
     </>
   );

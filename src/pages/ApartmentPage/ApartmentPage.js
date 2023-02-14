@@ -37,6 +37,13 @@ function ApartmentPage() {
     setSelected(i);
   };
 
+  function scrollTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
   let targetedLogement = logements.find(logement => logement._id === apartId);
 
   return (
@@ -46,7 +53,11 @@ function ApartmentPage() {
           <Loading />
         </div>
       ) : targetedLogement ? (
-        <div key={targetedLogement._id} className={`${style.container}`}>
+        <div
+          key={targetedLogement._id}
+          className={`${style.container}`}
+          handleScrollTop={scrollTop()}
+        >
           <div
             className={`${style.carousselContainer} ${style.animate1} mb-30`}
           >
