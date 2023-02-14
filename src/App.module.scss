@@ -1,6 +1,7 @@
 @use './assets/styles/mixins' as mixin;
 
 .layout {
+  min-height: 100vh;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -15,11 +16,10 @@
 }
 
 .footerContainer {
-  position: relative;
+  position: absolute;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 50px;
 }
