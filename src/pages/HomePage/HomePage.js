@@ -18,7 +18,11 @@ function HomePage() {
       <div
         className={` ${style.bannerContainer} ${style.animate} ${style.animateTime1}`}
       >
-        <Banner banner={bannerImage} displayBannerText={true} />
+        <Banner
+          banner={bannerImage}
+          displayBannerText={true}
+          key={Math.random()}
+        />
       </div>
 
       <section
@@ -32,7 +36,10 @@ function HomePage() {
           <>
             <div className={` ${style.grid}`}>
               {logements.map(l => (
-                <div className={`${style.animate} ${style.animateTime3}`}>
+                <div
+                  className={`${style.animate} ${style.animateTime3}`}
+                  key={Math.random()}
+                >
                   <ApartmentCard key={l._id} logement={l} />
                 </div>
               ))}

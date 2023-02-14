@@ -6,6 +6,9 @@
   @include mixin.xs {
     margin-top: 20px;
   }
+  @include mixin.sm {
+    margin-top: 40px;
+  }
 }
 
 .starBasic {

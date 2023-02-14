@@ -27,6 +27,7 @@ function Accordion({ text, title }) {
       {bienUnTableau ? (
         text.map(equipement => (
           <div
+            key={Math.random()}
             className={
               selected === true
                 ? `${style.content} ${style.show}`
