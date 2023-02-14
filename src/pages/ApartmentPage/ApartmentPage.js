@@ -63,7 +63,7 @@ function ApartmentPage() {
           >
             <Pictures targetedLogement={targetedLogement} />
           </div>
-          <div className={`${style.bodyContainer}`}>
+          <div className={`${style.bodyContainer} ${style.animate2}`}>
             <div className={`${style.titleAndTagContainer}`}>
               <div className={`${style.titleContainer} mb-20`}>
                 <Title targetedLogement={targetedLogement} />
@@ -85,7 +85,7 @@ function ApartmentPage() {
           </div>
 
           <div className={`${style.descriptionContainer} ${style.animate3}`}>
-            <div className={`${style.accordion}`}>
+            <div className={`${style.accordion} ${style.animate3}`}>
               <Description
                 key={targetedLogement.description}
                 text={targetedLogement.description}
@@ -95,7 +95,7 @@ function ApartmentPage() {
               />
             </div>
 
-            <div className={`${style.accordion}`}>
+            <div className={`${style.accordion} ${style.animate3}`}>
               <Equipements
                 key={Math.random()}
                 text={targetedLogement.equipments}

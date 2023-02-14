@@ -1,16 +1,5 @@
 @use '../../assets/styles/mixins' as mixin;
 
-@keyframes slideup {
-  from {
-    transform: translatey(20px);
-    opacity: 0%;
-  }
-  to {
-    transform: translatey(0px);
-    opacity: 100%;
-  }
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -43,6 +32,8 @@
   width: 100%;
   justify-content: space-between;
   padding: 0px 0px 30px 0px;
+  opacity: 0;
+  animation: slideup 1s forwards;
   @include mixin.xs {
     max-width: 335px;
     width: 100%;
@@ -93,24 +84,16 @@
   display: flex;
 }
 
-.layoutContainer {
-  animation: slideup 1s forwards;
-  opacity: 0;
-  display: flex;
-  width: 1240px;
-  justify-content: space-between;
-}
-
 .animate1 {
-  animation-delay: calc(0.1s / 1.5);
+  animation-delay: calc(1s / 1.5);
 }
 
 .animate2 {
-  animation-delay: calc(0.3s / 1.5);
+  animation-delay: calc(0.6s / 1.5);
 }
 
 .animate3 {
-  animation-delay: calc(0.6s / 1.5);
+  animation-delay: calc(0.1s / 1.5);
 }
 .wrapper {
   margin-top: 20px;
@@ -121,8 +104,8 @@
   width: 1240px;
   display: flex;
   justify-content: space-between;
-  animation: slideup 1s forwards;
   opacity: 0;
+  animation: slideup 1s forwards;
   @include mixin.xs {
     max-width: 335px;
     width: 100%;
@@ -142,6 +125,8 @@
 }
 
 .accordion {
+  opacity: 0;
+  animation: slideup 1s forwards;
   width: 582px;
   display: flex;
   justify-content: space-between;
@@ -158,5 +143,16 @@
   @include mixin.lg {
     width: 953px;
     padding: 0px 20px 0px 20px;
+  }
+}
+
+@keyframes slideup {
+  from {
+    transform: translatey(20px);
+    opacity: 0%;
+  }
+  to {
+    transform: translatey(0px);
+    opacity: 100%;
   }
 }
