@@ -26,7 +26,7 @@ function ScrollButton() {
       {showBtn && (
         <i
           onClick={handleClickScrollTop}
-          className={`fa-solid fa-angle-up ${style.scrollBtn} `}
+          className={`fa-solid fa-angle-up ${style.scrollBtn}`}
         ></i>
       )}
     </div>
