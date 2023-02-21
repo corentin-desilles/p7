@@ -10,9 +10,10 @@ import { useFetchData } from '../../hooks';
 import { Navigate, useParams } from 'react-router';
 import { useContext, useState } from 'react';
 import style from './ApartmentPage.module.scss';
-import Description from './components/Description/Description';
-import Equipements from './components/Equipements/Equipements';
+// import Description from './components/Description/Description';
+// import Equipements from './components/Equipements/Equipements';
 import Loading from '../../components/Loading/Loading';
+import Collapse from '../../components/Collapse/Collapse';
 
 function ApartmentPage() {
   const BASE_URL_API = useContext(ApiContext);
@@ -86,7 +87,7 @@ function ApartmentPage() {
 
           <div className={`${style.descriptionContainer} ${style.animate3}`}>
             <div className={`${style.accordion} ${style.animate3}`}>
-              <Description
+              <Collapse
                 key={targetedLogement.description}
                 text={targetedLogement.description}
                 title={'Description'}
@@ -94,9 +95,8 @@ function ApartmentPage() {
                 selected={selected}
               />
             </div>
-
             <div className={`${style.accordion} ${style.animate3}`}>
-              <Equipements
+              <Collapse
                 key={Math.random()}
                 text={targetedLogement.equipments}
                 title={'Equipements'}
