@@ -74,6 +74,7 @@
   padding: 0px 0px 0px 20px;
   border-radius: 5px;
   color: var(--primary);
+
   @include mixin.xs {
     font-size: 12px;
     line-height: 17.11px;

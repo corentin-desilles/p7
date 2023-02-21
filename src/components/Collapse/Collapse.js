@@ -25,18 +25,17 @@ function Collapse({ text, title }) {
       </div>
 
       {bienUnTableau ? (
-        text.map(equipement => (
-          <div
-            key={equipement}
-            className={
-              selected === true
-                ? `${style.content} ${style.show}`
-                : `${style.content}`
-            }
-          >
-            {equipement}
-          </div>
-        ))
+        <div
+          className={
+            selected === true
+              ? `${style.content} ${style.show}`
+              : `${style.content}`
+          }
+        >
+          {text.map(equipement => (
+            <div key={equipement}>{equipement}</div>
+          ))}
+        </div>
       ) : (
         <div
           className={
