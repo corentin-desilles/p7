@@ -20,9 +20,19 @@ function Gallery({ targetedLogement: { pictures } }) {
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
     setAnimate(true);
+    console.log(pictures.length);
   }
 
-  return (
+  return pictures.length === 1 ? (
+    <div className={`${style.sliderStyle}`}>
+      <img
+        src={pictures[currentIndex]}
+        key={Math.random()}
+        className={`${style.slideStyle}`}
+        alt="interieur de l'appartement"
+      />
+    </div>
+  ) : (
     <div className={`${style.sliderStyle}`}>
       <i
         onClick={handleClickPreviousPhoto}
