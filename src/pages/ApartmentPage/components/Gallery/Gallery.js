@@ -22,15 +22,6 @@ function Gallery({ targetedLogement: { pictures } }) {
     setAnimate(true);
   }
 
-  const slideStyle = {
-    width: '100%',
-    height: '100%',
-    borderRadius: '10px',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundImage: `url(${pictures[currentIndex]})`,
-  };
-
   return (
     <div className={`${style.sliderStyle}`}>
       <i
@@ -43,13 +34,19 @@ function Gallery({ targetedLogement: { pictures } }) {
       ></i>
 
       {animate === true ? (
-        <div
+        <img
+          src={pictures[currentIndex]}
           key={Math.random()}
-          style={slideStyle}
-          className={`${style.animate}`}
-        ></div>
+          className={`${style.slideStyle} ${style.animate}`}
+          alt="interieur de l'appartement"
+        />
       ) : (
-        <div key={Math.random()} style={slideStyle}></div>
+        <img
+          src={pictures[currentIndex]}
+          key={Math.random()}
+          className={`${style.slideStyle}`}
+          alt="interieur de l'appartement"
+        />
       )}
 
       <div className={`${style.counterPosition}`}>
