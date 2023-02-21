@@ -3,7 +3,7 @@ import style from './Collapse.module.scss';
 
 function Collapse({ text, title }) {
   const bienUnTableau = Array.isArray(text);
-  const [selected, setSelected] = useState(true);
+  const [selected, setSelected] = useState(false);
 
   function handleClickDisplayText() {
     setSelected(!selected);
