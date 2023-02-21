@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import style from './Accordion.module.scss';
+import style from './Collapse.module.scss';
 
-function Accordion({ text, title }) {
+function Collapse({ text, title }) {
   const bienUnTableau = Array.isArray(text);
   const [selected, setSelected] = useState(true);
 
@@ -52,4 +52,4 @@ function Accordion({ text, title }) {
   );
 }
 
-export default Accordion;
+export default Collapse;

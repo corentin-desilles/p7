@@ -1,4 +1,4 @@
-import Pictures from './components/Pictures/Pictures';
+import Gallery from './components/Gallery/Gallery';
 import NameTag from './components/NameTag/NameTag';
 import Title from './components/Title/Title';
 import Rate from './components/Rate/Rate';
@@ -61,7 +61,7 @@ function ApartmentPage() {
           <div
             className={`${style.carousselContainer} ${style.animate1} mb-30`}
           >
-            <Pictures targetedLogement={targetedLogement} />
+            <Gallery targetedLogement={targetedLogement} />
           </div>
           <div className={`${style.bodyContainer} ${style.animate2}`}>
             <div className={`${style.titleAndTagContainer}`}>

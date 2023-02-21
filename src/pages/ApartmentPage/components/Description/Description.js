@@ -1,8 +1,8 @@
-import Accordion from '../../../../components/Accordion/Accordion';
+import Collapse from '../../../../components/Collapse/Collapse';
 
 function Description({ text, title, i, toggle, selected }) {
   return (
-    <Accordion
+    <Collapse
       text={text}
       title={title}
       i={i}

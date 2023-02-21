@@ -2,10 +2,10 @@
 // import Picture from './components/Picture';
 // import style from './Pictures.module.scss';
 // import { data } from '../../../../data/logements';
-import style from './Pictures.module.scss';
+import style from './Gallery.module.scss';
 import { useState } from 'react';
 
-function Pictures({ targetedLogement: { pictures } }) {
+function Gallery({ targetedLogement: { pictures } }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
 
@@ -61,4 +61,4 @@ function Pictures({ targetedLogement: { pictures } }) {
   );
 }
 
-export default Pictures;
+export default Gallery;
