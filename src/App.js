@@ -5,9 +5,9 @@ import { Suspense } from 'react';
 import Footer from './components/Footer/Footer';
 import ScrollButton from './components/ScrollButton/ScrollButton';
 
-// import { seedLogements } from './data/seed';
+ import { seedLogements } from './data/seed';
 
-// seedLogements();
+seedLogements();
 
 function App() {
   return (
